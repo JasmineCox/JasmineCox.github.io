@@ -12,9 +12,24 @@
     </style>
 </head>
 <body>
-
 <div id='map'></div>
 <script>
+    
+    var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+    
 mapboxgl.accessToken = 'pk.eyJ1IjoiamF6enlqZWZmIiwiYSI6InpCY1V6U2cifQ.34kGSoUlluR9Wr9m4JWBDA';
 var map = new mapboxgl.Map({
     container: 'map', // container id
