@@ -43,7 +43,7 @@ makegrid()
 //add a postcode/gazetteer search box (see searchbox.js)
 addSearchBox(1);
 //set the center of the map and the zoom level
-osMap.setCenter(new OpenSpace.MapPoint(414350,297010),1);}
+osMap.setCenter(new OpenSpace.MapPoint(position.coords.latitude,position.coords.longitude),1);}
 </script>
 </head>
 <body onload="initmapbuilder()">
