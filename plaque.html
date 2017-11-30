@@ -24,30 +24,15 @@ function showPosition(position) {
     "<br>Longitude: " + position.coords.longitude;
 }
 </script>
-<title>Open Space Web-Map builder Code</title>
-<!-- Download OpenSpace API using your key -->
-<script type="text/javascript" src="https://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=5BE6CEDB63D73B8DE0530C6CA40A0733"></script>
-<script type= "text/javascript" src="https://openspace.ordnancesurvey.co.uk/osmapapi/script/mapbuilder/basicmap.js"></script>
-<script type= "text/javascript" src="https://openspace.ordnancesurvey.co.uk/osmapapi/script/mapbuilder/searchbox.js"></script>
-<script type="text/javascript">
-function initmapbuilder()
-{
-//initiate the map
-var options = {resolutions: [2500, 1000, 500, 200, 100, 50, 25, 10, 5, 4, 2.5, 2, 1]};
-osMap = new OpenSpace.Map('map', options);
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.css' rel='stylesheet' />
 
-//configure map options (basicmap.js)
-setglobaloptions();
-// add a box displaying co-ordinates (mouse over map to display) 
-makegrid()
-//add a postcode/gazetteer search box (see searchbox.js)
-addSearchBox(1);
-//set the center of the map and the zoom level
-osMap.setCenter(new OpenSpace.MapPoint(position.coords.latitude,position.coords.longitude),1);}
-</script>
-</head>
-<body onload="initmapbuilder()">
-<div id="map" style="border: 1px solid black; width:540px; height:440px;"></div>
+	var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v10',
+  center: [position.coords.longitude, position.coords.latitude],
+  zoom: 9
+});
 </body>
 </html>
 		
