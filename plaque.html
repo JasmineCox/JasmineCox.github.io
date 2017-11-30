@@ -23,12 +23,6 @@ function getLocation() {
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
     
 mapboxgl.accessToken = 'pk.eyJ1IjoiamF6enlqZWZmIiwiYSI6InpCY1V6U2cifQ.34kGSoUlluR9Wr9m4JWBDA';
 var map = new mapboxgl.Map({
@@ -37,6 +31,13 @@ var map = new mapboxgl.Map({
     center: [56, 40], // starting position [lng, lat]
     zoom: 9 // starting zoom
 });
+    
+    }
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
 </script>
 
 </body>
