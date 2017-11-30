@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-</script>
-	
     <meta charset='utf-8' />
     <title>Display a map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -21,7 +19,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamF6enlqZWZmIiwiYSI6InpCY1V6U2cifQ.34kGSoUllu
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    center: [position.coords.longitude, position.coords.longitude], // starting position [lng, lat]
+    center: [-74.50, 40], // starting position [lng, lat]
     zoom: 9 // starting zoom
 });
 </script>
