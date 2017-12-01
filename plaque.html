@@ -32,12 +32,34 @@ map.addControl(new mapboxgl.GeolocateControl({
 }));
 
     map.on('load', function () {
-
     map.addLayer({
         "id": "points",
         "type": "symbol",
         "source": {
-            url: "https://api.mapbox.com/datasets/v1/jazzyjeff/cjanwe7ig4pt733l912bn51k8?access_token=pk.eyJ1IjoiamF6enlqZWZmIiwiYSI6InpCY1V6U2cifQ.34kGSoUlluR9Wr9m4JWBDA"
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-5.47746, 50.11717]
+                    },
+                    "properties": {
+                        "title": "St Michael's Mount",
+                        "icon": "monument"
+                    }
+                }, {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-122.414, 37.776]
+                    },
+                    "properties": {
+                        "title": "Mapbox SF",
+                        "icon": "harbor"
+                    }
+                }]
             }
         },
         "layout": {
