@@ -30,6 +30,27 @@ map.addControl(new mapboxgl.GeolocateControl({
     },
     trackUserLocation: true
 }));
+    map.on('load', function () {
+
+    map.addLayer({
+        "id": "terrain-data",
+        "type": "line",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://jazzyjeff.cjanwe7ig4pt733l912bn51k8-7ns6u'
+        },
+        "source-layer": "contour",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#ff69b4",
+            "line-width": 1
+        }
+    });
+});
+    
 </script>
 
 </body>
