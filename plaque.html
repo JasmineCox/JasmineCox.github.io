@@ -38,9 +38,12 @@ map.addControl(new mapboxgl.GeolocateControl({
     map.on('load', function () {
     $(function() {
        var features = [];
+        
+        console.log('is ths even being hit???? sozjasmine');
 
        $.getJSON('features.geojson', function(data) {
            $.each(data.feature, function(i, f) {
+               console.log(f);
               map.addLayer(f);
          });
        });
